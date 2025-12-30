@@ -1,0 +1,63 @@
+html, body {
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden; /* Critical for mobile responsiveness */
+            width: 100%;
+        }
+
+        /* Cursor System - Only visible on devices with hover capability (Desktop) */
+        @media (hover: hover) and (pointer: fine) {
+            body { cursor: none; }
+            #cursor, #cursor-dot { display: block; }
+        }
+        @media (hover: none) {
+            #cursor, #cursor-dot { display: none; }
+        }
+
+        #cursor {
+            position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 50%;
+            pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background-color 0.3s;
+            mix-blend-mode: difference;
+        }
+        #cursor-dot {
+            position: fixed; top: 0; left: 0; width: 4px; height: 4px;
+            background-color: #D4FFA3; border-radius: 50%;
+            pointer-events: none; z-index: 10000;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Ambient Light */
+        .ambient-light {
+            position: fixed; width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; z-index: 0; filter: blur(80px);
+        }
+
+        /* Utilities */
+        .stroke-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent; transition: 0.3s;
+        }
+        .stroke-text:hover {
+            -webkit-text-stroke: 1px #D4FFA3; color: rgba(212, 255, 163, 0.1);
+        }
+
+        .bar-chart-fill { animation: growUp 2s ease-out forwards; transform-origin: bottom; transform: scaleY(0); }
+        @keyframes growUp { to { transform: scaleY(1); } }
+
+        .hover-pause:hover { animation-play-state: paused; }
+
+        .link-underline { position: relative; display: inline-block; }
+        .link-underline::after {
+            content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0;
+            background-color: #D4FFA3; transition: width 0.3s ease;
+        }
+        .link-underline:hover::after { width: 100%; }
+
+        /* Lenis */
+        html.lenis { width: 100%; height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
