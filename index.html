@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -45,7 +46,27 @@
         }
     </script>
 </head>
-<body>
+<body class="selection:bg-neon selection:text-void">
+
+    <div id="cursor"></div>
+    <div id="cursor-dot"></div>
+    <div class="ambient-light" id="ambient-light"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-4 md:px-6 py-4 md:py-6 flex justify-between items-center mix-blend-difference bg-void/50 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b border-white/5 md:border-none">
+        <a href="#" class="text-xl md:text-2xl font-bold tracking-tighter hover-magnetic">CHASIEN.</a>
+        
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest text-gray-400">
+            <a href="#about" class="hover:text-neon transition-colors hover-magnetic">Agency</a>
+            <a href="#work" class="hover:text-neon transition-colors hover-magnetic">Case Studies</a>
+            <a href="#testimonials" class="hover:text-neon transition-colors hover-magnetic">Trusted By</a>
+        </div>
+
+        <button onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})" class="px-5 py-2 md:px-6 border border-white/20 rounded-full text-[10px] md:text-xs uppercase tracking-widest hover:bg-neon hover:text-black hover:border-neon transition-all duration-300 hover-magnetic">
+            Start Project
+        </button>
+    </nav>
+
+    
     
 </body>
 </html>
