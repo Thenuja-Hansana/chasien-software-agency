@@ -1,4 +1,3 @@
-# 🚀 CHASIEN — Digital Agency Website
 
 A modern, cinematic **digital agency landing page** built with **HTML, Tailwind CSS, GSAP, and Lenis**.  
 Designed to showcase premium branding, smooth motion, and immersive interactions.
